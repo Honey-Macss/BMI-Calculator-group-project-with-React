@@ -59,30 +59,30 @@ const CalculatorBody = () => {
         event.preventDefault()
 
         measurementValidity ? 
-        setBmi(calculationOne.toFixed(1)) :
+        setBmi(calculationOne.toFixed(1)):
         setBmi(calculationTwo.toFixed(1)) 
 
         if (heightCm === "" || heightCm <= 0 || weightKg === "" || weightKg <= 0 ) {
-            setHeightCmError("Please fill all values correctly")
+            setHeightCmError("Please, fill all values correctly")
         } else {
             setHeightCmError("")
             setCmAndKgStatus(true)
         }
 
         if (heightFt === "" || heightFt <= 0 || heightIn === "" || heightIn <= 0 || weightLb === "" || weightLb <= 0 ) {
-            setHeightInError("Please fill all values correctly")
+            setHeightInError("Please, fill all values correctly")
         } else {
             setHeightInError("")
             setFtAndlbStatus(true)
         }
 
-        if (age === "" || age <= 0) {
-            setAgeError("Please fill all values correctly")
-        } else {
-            setCmAndKgStatus(true)
-        }
+        // if (age === "" || age <= 0) {
+        //     setAgeError("Please fill all values correctly")
+        // } else {
+        //     setCmAndKgStatus(true)
+        // }
 
-        if (cmAndKgStatus) {
+        // if (cmAndKgStatus) {
             if (calculationOne > 0 && calculationOne < 18.5 ) {
                 setMessage("You are Underweight, Eat more!!!")
             } else if (calculationOne >= 18.5 && calculationOne < 24.9){
@@ -92,9 +92,9 @@ const CalculatorBody = () => {
             } else if (calculationOne >= 30) {
                 setMessage("You are Obese, hit the gym!!!")
             }
-        } 
+        // } 
 
-        if (ftAndlbStatus) {
+        // if (ftAndlbStatus) {
             if (calculationTwo > 0 && calculationTwo < 18.5 ) {
                 setMessage("You are Underweight, Eat more!!!")
             } else if (calculationTwo >= 18.5 && calculationTwo < 24.9){
@@ -104,7 +104,7 @@ const CalculatorBody = () => {
             } else if (calculationTwo >= 30) {
                 setMessage("You are Obese, hit the gym!!!")
             }
-        } 
+        // } 
 
     }
     
@@ -123,12 +123,13 @@ const CalculatorBody = () => {
         setAgeError("")
     }
     
+
 return (
-    <div className='calculator'>
-            <div className='calculatorBorder'>
-                <h1 className='headerText'>Adult BMI Calculator</h1>
+         
+                
                 <form action="" className='calculatorBody'>
-                    <p style={{color: "white", fontSize: "1.2rem"}}>If you have or think you might have an <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders/overview/" target='blank'>eating disorder</a>, 
+                <h1 className='headerText'>Body Mass Index Calculator</h1>
+                    <p style={{color: "white", fontSize: "1.2rem", textAlign: "center"}}>If you have or think you might have an <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders/overview/" target='blank'>eating disorder</a>, 
                         we advise you not to use the BMI Calculator and get further advice from your GP.</p>
                     
                     <AgeInput ageValue={age} changeAge={(e) => setAge(e.target.value)} errorMessage={ageError} />
@@ -139,11 +140,12 @@ return (
                     <Button calculateBmi={handleBmiCalculation} resetInput={handleResetInput}/>
 
                     <p className='result'>Your BMI is: <div className='resultBox'>{bmi}</div></p>
+                    
                     <p className='result'>{message}</p>
+                    <p className='courtesy'>Courtesy: Team C-Drive</p>
                 </form>
-            </div>
+           
 
-        </div>
 )
 }
 

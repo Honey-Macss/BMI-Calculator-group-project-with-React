@@ -7,9 +7,9 @@
 
 .App{
     height: 100vh;
-    background-color: azure;
+    background-color: grey;
     display: grid;
-    grid-template-rows: 6rem 1fr;
+    place-items: center;
 }
 
 .generalError{
