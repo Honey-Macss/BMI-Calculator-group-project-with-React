@@ -1,9 +1,11 @@
+// Import statement
 import "./HeightAndWeight.css"
 
 const HeightAndWeight = (prop) => {
       return (
     <div className='heightAndweight'>
-        <div className='heiAndWeiLabel feetStyle' >(<p className='underlined' onClick={prop.imperialChange}>Imperial</p> | <p>Metric</p> )</div>
+        {/* Creation of Inputs and Labels with values and functions passed in through props from the parent tag, Events */}
+        <div className='heiAndWeiLabel feetStyle' >( <p>Metric</p> | <p className='underlined' onClick={prop.imperialChange}>Imperial</p>  )</div>
         <span className='heightAndWeightSpan'>
             <span className='heightDisplay'>
                 <label className='heiAndWeiLabel' for="">Height: <p style={{fontSize: "1.2rem", opacity: "70%"}}>Centimeters</p></label>

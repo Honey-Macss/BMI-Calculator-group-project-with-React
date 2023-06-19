@@ -1,9 +1,11 @@
+// Import Statement
 import "./HeightAndWeight.css"
 
 const HeiAndWeiEnglish = (prop) => {
 
   return (
     <div className='heightAndweight'>
+       {/* Creation of Inputs and Labels with values and functions passed in through props from the parent tag, Events */}
     <div className='heiAndWeiLabel feetStyle' >(<p>Imperial</p> | <p onClick={prop.metricChange} className='underlined'>Metric</p> )</div>
         <span className='heightAndWeightSpan'>
             <span className='heightDisplay' >
