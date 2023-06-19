@@ -1,0 +1,11 @@
+.navigationBar{
+    background-color: blue;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+}
+.navigationBar h1{
+    color: white;
+    font-size: 3rem;
+}
