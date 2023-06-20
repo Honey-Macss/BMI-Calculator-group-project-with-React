@@ -5,7 +5,7 @@ const HeightAndWeight = (prop) => {
       return (
     <div className='heightAndweight'>
         {/* Creation of Inputs and Labels with values and functions passed in through props from the parent tag, Events */}
-        <div className='heiAndWeiLabel feetStyle' >( <p>Metric</p> | <p className='underlined' onClick={prop.imperialChange}>Imperial</p>  )</div>
+        <div className='heiAndWeiLabel feetStyle' >( <p className='underlined'>Metric</p> | <p className="notUnderlined" onClick={prop.imperialChange}>Imperial</p>  )</div>
         <span className='heightAndWeightSpan'>
             <span className='heightDisplay'>
                 <label className='heiAndWeiLabel' for="">Height: <p style={{fontSize: "1.2rem", opacity: "70%"}}>Centimeters</p></label>

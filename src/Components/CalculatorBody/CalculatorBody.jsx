@@ -4,6 +4,10 @@ import "./CalculatorBody.css";
 import HeightAndWeight from "../HeightAndWeight/HeightAndWeight";
 import HeiAndWeiEnglish from "../HeightAndWeight/HeiAndWeiEnglish";
 import Button from "../Button/Button";
+import healthy from "../Images/healthy.png"
+import images from "../Images/images.png"
+import overweight from "../Images/overweight.png"
+import Underweight from "../Images/underweight.png"
 
 const CalculatorBody = () => {
   // Declaring states.
@@ -11,7 +15,7 @@ const CalculatorBody = () => {
   const [bmi, setBmi] = useState("00:0");
 
   const [heightCmError, setHeightCmError] = useState("");
-  const [heightInError, setHeightInError] = useState("In");
+  const [heightInError, setHeightInError] = useState("");
 
   const [heightCm, setHeightCm] = useState("");
   const [weightKg, setWeightKg] = useState("");
@@ -19,6 +23,8 @@ const CalculatorBody = () => {
   const [heightFt, setHeightFt] = useState("");
   const [heightIn, setHeightIn] = useState("");
   const [weightLb, setWeightLb] = useState("");
+
+  const [image, setImage] = useState("")
 
   const [measurementValidity, setMeasurementValidity] = useState(true);
 
@@ -31,6 +37,7 @@ const CalculatorBody = () => {
     setBmi("00:0");
     setHeightCmError("");
     setHeightInError("");
+    setImage("")
   };
 
 //   Handling Switch to Metric system
@@ -43,6 +50,7 @@ const CalculatorBody = () => {
     setBmi("00:0");
     setHeightCmError("");
     setHeightInError("");
+    setImage("")
   };
 
 //   Calculation formula for Metric system
@@ -66,12 +74,19 @@ const CalculatorBody = () => {
     //   Handling conditional statements for when calculate button is clicked
     if (calculationOne > 0 && calculationOne < 18.5) {
       setMessage("You are Underweight, Eat more!!!");
-    } else if (calculationOne >= 18.5 && calculationOne < 24.9) {
+      setImage(Underweight)
+    }
+    if (calculationOne >= 18.5 && calculationOne < 24.9) {
       setMessage("You have a normal Weight, Keep it up!!!");
-    } else if (calculationOne >= 24.9 && calculationOne < 29.9) {
+      setImage(healthy)
+    }
+    if (calculationOne >= 24.9 && calculationOne < 29.9) {
       setMessage("You are Overweight, start working out!!!");
-    } else if (calculationOne >= 30) {
-      setMessage("You are Obese, hit the gym!!!");
+      setImage(overweight)
+    }
+    if (calculationOne >= 30) {
+      setMessage("You are Obese, hit the gym, ASAP!!!");
+      setImage(images)
     } 
 
     if (heightCm === "" || heightCm <= 0 || weightKg === "" || weightKg <= 0) {
@@ -82,15 +97,22 @@ const CalculatorBody = () => {
 
     if (calculationTwo > 0 && calculationTwo < 18.5) {
       setMessage("You are Underweight, Eat more!!!");
-    } else if (calculationTwo >= 18.5 && calculationTwo < 24.9) {
+      setImage(Underweight)
+    }
+    if (calculationTwo >= 18.5 && calculationTwo < 24.9) {
       setMessage("You have a normal Weight, Keep it up!!!");
-    } else if (calculationTwo >= 24.9 && calculationTwo < 29.9) {
+      setImage(healthy)
+    }
+    if (calculationTwo >= 24.9 && calculationTwo < 29.9) {
       setMessage("You are Overweight, start working out!!!");
-    } else if (calculationTwo >= 30) {
-      setMessage("You are Obese, hit the gym!!!");
+      setImage(overweight)
+    }
+    if (calculationTwo >= 30) {
+      setMessage("You are Obese, hit the gym, ASAP!!!");
+      setImage(images)
     } 
 
-    if (heightFt === "" || heightFt <= 0 || heightIn === "" || heightIn <= 0 || weightLb === "" || weightLb <= 0 ) {
+    if (heightFt === "" || heightFt <= 0 || heightIn === "" || heightIn < 0 || weightLb === "" || weightLb <= 0 ) {
       setHeightInError("Please, fill all values correctly");
     } else {
       setHeightInError("");
@@ -112,17 +134,19 @@ const CalculatorBody = () => {
     setMessage("");
     setHeightCmError("");
     setHeightInError("");
+    setImage(" ")
   };
 
   return (
     // Rendering of paragraphs to hold text and rendering imported components and passing props that hold their values 
     // and functions to be carried out when events occur
-    <form action="" className="calculatorBody">
+    <div className="divStyle">
+      <form action="" className="calculatorBody">
       <h1 className="headerText">Body Mass Index Calculator</h1>
-      <p style={{ color: "white", fontSize: "1.2rem", textAlign: "center" }}>
+      <p style={{ color: "white", fontSize: "1.1rem", textAlign: "center" }}>
         If you have or think you might have an{" "}
         <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders/overview/" 
-        target="blank">eating disorder</a>
+        target="blank" style={{color: "red"}}>eating disorder</a>
         , we advise you not to use the BMI Calculator and get further advice
         from your GP.</p>
 
@@ -135,8 +159,7 @@ const CalculatorBody = () => {
           weightChangeKg={(e) => setWeightKg(e.target.value)}
           heightValue={heightCm}
           weightValue={weightKg}
-          imperialChange={handleImperialClick}
-          onChange={handleBmiCalculation} />) :
+          imperialChange={handleImperialClick} />) :
       (<HeiAndWeiEnglish
           heightAndWeightError={heightInError}
           heightChangeFt={(e) => setHeightFt(e.target.value)}
@@ -145,8 +168,7 @@ const CalculatorBody = () => {
           heightValueFt={heightFt}
           heightValueIn={heightIn}
           weightValueLb={weightLb}
-          metricChange={handleMetriClick}
-          onChange={handleBmiCalculation}/> )}
+          metricChange={handleMetriClick}/> )}
 
         {/* Button component rendering */}
       <Button calculateBmi={handleBmiCalculation} resetInput={handleResetInput} />
@@ -155,6 +177,8 @@ const CalculatorBody = () => {
       <p className="result">{message}</p>
       <p className="courtesy">Courtesy: Team C-Drive</p>
     </form>
+      <img className="image" src={image} alt="" />
+    </div>
   );
 };
 
