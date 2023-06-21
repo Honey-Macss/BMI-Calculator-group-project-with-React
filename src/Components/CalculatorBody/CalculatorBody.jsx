@@ -146,7 +146,7 @@ const CalculatorBody = () => {
       <p className="paraLink">
         If you have or think you might have an{" "}
         <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders/overview/" 
-        target="blank" style={{color: "red"}}>eating disorder</a>
+        target="blank" style={{color: "rgb(233, 134, 14)"}}>eating disorder</a>
         , we advise you not to use the BMI Calculator and get further advice
         from your GP.</p>
 
