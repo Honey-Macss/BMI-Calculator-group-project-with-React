@@ -5,7 +5,7 @@ import HeightAndWeight from "../HeightAndWeight/HeightAndWeight";
 import HeiAndWeiEnglish from "../HeightAndWeight/HeiAndWeiEnglish";
 import Button from "../Button/Button";
 import healthy from "../Images/healthy.png"
-import images from "../Images/images.png"
+import obese from "../Images/obese.png"
 import overweight from "../Images/overweight.png"
 import Underweight from "../Images/underweight.png"
 
@@ -86,7 +86,7 @@ const CalculatorBody = () => {
     }
     if (calculationOne >= 30) {
       setMessage("You are Obese, hit the gym, ASAP!!!");
-      setImage(images)
+      setImage(obese)
     } 
 
     if (heightCm === "" || heightCm <= 0 || weightKg === "" || weightKg <= 0) {
@@ -109,7 +109,7 @@ const CalculatorBody = () => {
     }
     if (calculationTwo >= 30) {
       setMessage("You are Obese, hit the gym, ASAP!!!");
-      setImage(images)
+      setImage(obese)
     } 
 
     if (heightFt === "" || heightFt <= 0 || heightIn === "" || heightIn < 0 || weightLb === "" || weightLb <= 0 ) {
@@ -140,10 +140,10 @@ const CalculatorBody = () => {
   return (
     // Rendering of paragraphs to hold text and rendering imported components and passing props that hold their values 
     // and functions to be carried out when events occur
-    <div className="divStyle">
-      <form action="" className="calculatorBody">
+    <div className="calculatorBody">
+      <form action="" className="divStyle">
       <h1 className="headerText">Body Mass Index Calculator</h1>
-      <p style={{ color: "white", fontSize: "1.1rem", textAlign: "center" }}>
+      <p className="paraLink">
         If you have or think you might have an{" "}
         <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders/overview/" 
         target="blank" style={{color: "red"}}>eating disorder</a>

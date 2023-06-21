@@ -8,12 +8,12 @@ const HeightAndWeight = (prop) => {
         <div className='heiAndWeiLabel feetStyle' >( <p className='underlined'>Metric</p> | <p className="notUnderlined" onClick={prop.imperialChange}>Imperial</p>  )</div>
         <span className='heightAndWeightSpan'>
             <span className='heightDisplay'>
-                <label className='heiAndWeiLabel' for="">Height: <p style={{fontSize: "1.2rem", opacity: "70%"}}>Centimeters</p></label>
+                <label className='heiAndWeiLabel' for="">Height: <p className="paraUnit" >Centimeters</p></label>
                 <input className='heiAndWeiInput' placeholder='cm' type="number" value={prop.heightValue} onChange={prop.heightChangeCm} />
             </span>
 
             <span className='heightDisplay'>
-                <label className='heiAndWeiLabel' for="">Weight: <p style={{fontSize: "1.2rem", opacity: "70%"}}>Kilograms</p></label>
+                <label className='heiAndWeiLabel' for="">Weight: <p className="paraUnit" >Kilograms</p></label>
                 <input className='heiAndWeiInput' placeholder='kg' type="number" value={prop.weightValue} onChange={prop.weightChangeKg} />
             </span>
         </span>

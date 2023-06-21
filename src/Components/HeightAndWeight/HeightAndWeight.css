@@ -61,5 +61,28 @@
     gap: 0.5rem;
 }
 
+.paraUnit{
+    font-size: 1.2rem;
+    opacity: 70;
+}
 
+@media only screen and (max-width:800px) {
+    .heightAndweight{
+        padding: 0.7rem 0.8rem;
+        margin-top: 0.7rem;
+    }
+    .heightAndWeightSpan{
+        gap: 0.5rem;
+        margin-top: 0.7rem;
+    }
+    .heightDisplay{
+        padding: 0.7rem 0.8rem;
+    }
+    .heiAndWeiLabel{
+        font-size: 1.2rem;
+    }
+    .paraUnit{
+        font-size: 1.1rem;
+    }
+}
 

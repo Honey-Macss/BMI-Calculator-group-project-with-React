@@ -1,12 +1,12 @@
 
-.divStyle{
+.calculatorBody{
     display: flex;
     justify-content: space-between;
     gap: 10rem;
     align-items: center;
 }
 
-.calculatorBody{
+.divStyle{
     height: fit-content;
     max-width: 32rem;
     background: linear-gradient(to bottom right, rgb(95, 95, 173), rgb(184, 50, 184));
@@ -17,6 +17,11 @@
 
 .headerText{
     margin: 0.7rem 0;
+}
+.paraLink{
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 .result{
@@ -49,4 +54,57 @@
 }
 
 
+@media only screen and (max-width:1100px) {
+    .calculatorBody{
+        gap: 5rem;
+    }
+}
+@media only screen and (max-width:870px) {
+    .calculatorBody{
+        gap: 2rem;
+    }
+}
+@media only screen and (max-width:800px) {
+    .divStyle{
+        max-width: 30rem;
+        padding: 1.8rem;
+    }
+    .image{
+        width: 10rem;
+    }
+    .calculatorBody{
+        gap: 0.5rem;
+    }
+    .headerText{
+        margin: 0.5rem 0;
+        font-size: 1.9rem;
+    }
+    .paraLink{
+        font-size: 0.9rem;
+    }
+    .result{
+        font-size: 1.2rem;
+    }
+    .resultBox{
+        padding: 0.4rem 0.8rem;
+    }
+    .courtesy{
+        margin-top: 0.7rem;
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width:700px) {
+    .calculatorBody{
+        display: grid;
+        place-items: center;
+        padding-top: 5rem;
+    }
+}
+@media only screen and (max-width:550px) {
+    .calculatorBody{
+        padding-top: 2rem;
+
+        /* CONTINUE FROM HERE */
+    }
+}
 
